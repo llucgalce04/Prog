@@ -35,3 +35,17 @@ anualInterest = (4.25/100)/12
 finalValue = 1000
 initalDeposit = (finalValue)/((1 + anualInterest)**numberMonths)
 print("The inital deposit is", initalDeposit, "for a",finalValue,"€ profit in", years, "years or in", numberMonths, "months")
+
+#Apuntes
+print(f"Inicial Deposit {initalDeposit:.3f}")
+fruits = ["poma", "maduixa", "pera", "cirera"]
+for i in fruits:
+    print(i)
+name = input("Cual es tu nombre? \n")
+age = int(input("Cual es tu edad? \n"))
+height1 = float(input("Cuanto mides? \n"))
+weight = float(input("Cuanto pesas? \n"))
+city = input("Donde vives? \n")
+student = [name, age, height1, weight, city]
+for i in student:
+    print(i, end=' ')
