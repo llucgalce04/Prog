@@ -29,8 +29,9 @@ print("The perimeter of the rectangle is:", perimeter, "and the area is:", area,
 
 #Ejercicio 4
 
-numberMonths = 60
+years = 5
+numberMonths = years * 12
 anualInterest = (4.25/100)/12
 finalValue = 1000
 initalDeposit = (finalValue)/((1 + anualInterest)**numberMonths)
-print("The inital deposit is ", initalDeposit)
+print("The inital deposit is", initalDeposit, "for a",finalValue,"€ profit in", years, "years or in", numberMonths, "months")
