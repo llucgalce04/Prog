@@ -3,14 +3,14 @@ a = 3
 b = 4
 c = 5
 
-resolve = (b**2)-4*a*c
-print(resolve)
+result = (b**2)-4*a*c
+print("The discriminatn is: ", result)
 
 #Ejercicio 2
 
-v1 = 10.5
-v0 = 5.6
-t = 0.5
+finalVelocity = 10.5
+inicialVelocity = 5.6
+time = 0.5
 
-a = (v1-v0)/t
-print(a)
+accelerationResult = (finalVelocity-inicialVelocity)/time
+print("The avarage acceleration is ", accelerationResult)
