@@ -79,24 +79,31 @@ for i in ip_log:
         break
 '''
 # Password to checker
-password = '12334556666'
+password = 'B49Dh2qyRwXnn8e75Z4SAd'
 if len(password) >= 8:
     print("Tiene 8 Caracteres")
 uppercase = 0
 lowercase = 0
 isdigit = 0
 for i in password:
-    if i.isupper == True:
+    if i.isupper() == True:
         uppercase += 1
-    elif i.islower == True:
+    if i.islower() == True:
         lowercase += 1
-    elif i.isdigit == True:
+    if int(i.isdigit()) == True:
         isdigit += 1
 
-print(isdigit)
-if isdigit  >0:
+if isdigit  >= 1:
     print("No tiene numeros")
-if uppercase  >0:
+else:
+    print("Si tiene")
+
+if uppercase  >= 1:
     print("No tiene mayusculas")
-if lowercase  >0:
+else:
+    print("Si tiene mayusculas")
+          
+if lowercase  >= 1:
     print("No tiene minusculas")
+else:
+    print("Si tiene minusculas")
