@@ -1,4 +1,4 @@
-#Ejercicio 1
+'''#Ejercicio 1
 #Write a script that asks the user for a password and a verification code. If both are correct, grant access; otherwise, deny access.
 #To get access, the user has to input the password and the verificantion code "securePass123" and "42" . Otherwise, the access should be denied
 #tip : verify the logical statement AND
@@ -7,7 +7,6 @@
 #password =  '@enti.cat'
 
 # correct information conditions
-'''
 correct_password = "securePass123"
 correct_code = "42"
 
@@ -77,7 +76,7 @@ for i in ip_log:
         print("Dangerous Ip 203.0.113.5 found in the log")
         print("Esta en la poscion", contador)
         break
-'''
+
 # Password to checker
 uppercase = 0
 lowercase = 0
@@ -111,3 +110,25 @@ if uppercase and lowercase and isdigit and specialCharacters and passwordLen >= 
     print("Estan todas las condiciones")
 else:
     print("No estan todas las condiciones")
+'''
+# Correct password (hardcoded for this exercise)
+correct_password = "secure123"
+
+# Simulated list of password attempts (in a real scenario, these would be user inputs)
+attempts = ["password", "12345", "secure123",]
+index = 0
+attempts_limit = 3
+while index < len(attempts):
+    if correct_password in attempts:
+        print("ole ole")
+        break
+    else:
+        print("No ole")
+        index += 1
+    
+if index >=attempts_limit:
+    print("Account Locked")
+
+
+
+
