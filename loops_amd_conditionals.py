@@ -110,7 +110,7 @@ if uppercase and lowercase and isdigit and specialCharacters and passwordLen >= 
     print("Estan todas las condiciones")
 else:
     print("No estan todas las condiciones")
-'''
+
 # Correct password (hardcoded for this exercise)
 correct_password = "secure123"
 
@@ -129,6 +129,51 @@ while index < len(attempts):
 if index >=attempts_limit:
     print("Account Locked")
 
+# Simulated login attempts: 0 indicates failure, 1 indicates success
+login_attempts = [0, 0, 0, 1, 0, 0, 0, 0, 1]
 
+consecutive_failure = 0
+index = 0
 
+while index < len(login_attempts) and consecutive_failure < 3:
+    attempt = login_attempts[index]
+    if attempt == 0:
+        consecutive_failure += 1
 
+        print(f"Fallo de incio de sesion. Fallos consecutivos:{consecutive_failure}")
+    else:
+        consecutive_failure = 0
+        print("Inicio de sesion correcto. Contador de fallos reiniciado")
+    
+    index += 1
+if consecutive_failure == 3:
+    print("Cuenta bloqueda debido a 3 intentos fallidos consecutivos")
+'''
+
+# Simulated blocklist of malicious IP addresses
+blocklist = ["192.168.1.100", "10.0.0.5", "203.0.113.50", "172.16.0.2"]
+
+# Incoming traffic data: each entry contains an IP and a list of packets (as strings)
+traffic_log = [
+    {"ip": "192.168.0.1", "packets": ["GET /index.html", "Host: example.com", "Data: harmless"]},
+    {"ip": "10.0.0.5", "packets": ["attack on port 22", "Host: compromised.com"]},
+    {"ip": "172.16.0.2", "packets": ["Data: normal traffic", "Host: normal.com"]},
+    {"ip": "203.0.113.5", "packets": ["Data: harmless", "phishing attempt detected", "Host: phishing.com"]},
+    {"ip": "192.168.1.10", "packets": ["GET /admin", "malware detected", "Host: danger.com"]},
+    {"ip": "192.168.0.15", "packets": ["POST /upload", "Data: user login", "Host: safe.com"]}
+]
+
+# Keywords considered suspicious
+suspicious_keywords = ["attack", "malware", "phishing"]
+
+index = 0
+while index != len(traffic_log):
+    attempt = traffic_log[index].get("ip")
+    if attempt in blocklist:
+        print(f"Ip {attempt} bloqueada")
+    else:
+        trafficInfo = traffic_log[index].get("packets")
+        if any(keyword in packet for packet in trafficInfo for keyword in suspicious_keywords):
+            print("Investigación sobre", attempt)
+
+    index+=1
